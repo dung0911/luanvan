@@ -1,9 +1,9 @@
 <?php
 $configDB = array();
-$configDB[ 'host' ] 		 = 'http://shopluanvan.x10.mx/';
-$configDB[ 'database' ]	 = 'diyadblz_lvtn';
-$configDB[ 'username' ] 	 = 'diyadblz_lvtn';
-$configDB[ 'password' ] 	 = '123456';
+$configDB[ 'host' ] 		 = 'localhost';
+$configDB[ 'database' ]	 = 'shopquanao';
+$configDB[ 'username' ] 	 = 'root';
+$configDB[ 'password' ] 	 = '';
 
 define( 'HOST', $configDB[ 'host' ] );
 define( 'DB_NAME', $configDB[ 'database' ] );
