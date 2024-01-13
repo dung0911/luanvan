@@ -447,7 +447,7 @@ export default {
       return formattedValue.replace("₫", "VNĐ");
     },
     getImageUrl(photo) {
-      return `http://127.0.0.1:8000/uploads/${photo}`;
+      return `https://shopluanvan.x10.mx//uploads/${photo}`;
     },
   },
   created() {

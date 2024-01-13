@@ -20,7 +20,7 @@ class UploadFile {
         // Di chuyển tệp tải lên đến thư mục đích
         if ( move_uploaded_file( $file[ 'tmp_name' ], $uploadFilePath ) ) {
             // Xử lý thành công, có thể trả về đường dẫn đầy đủ của tệp đã lưu
-            $baseUrl = 'http://127.0.0.1:8000/';
+            $baseUrl = 'https://shopluanvan.x10.mx//';
             $fullFilePath = $baseUrl . $uploadFilePath;
 
             return $fullFilePath;

@@ -56,7 +56,7 @@
                   />
                   <img
                     v-else
-                    :src="`http://127.0.0.1:8000/uploads/` + userInfo.photo"
+                    :src="`https://shopluanvan.x10.mx//uploads/` + userInfo.photo"
                     alt="Avatar"
                     class="flex justify-center rounded-full mx-auto w-64 h-64 p-1 border-2"
                   />

@@ -192,7 +192,7 @@
               <div class="w-20">
                 <img
                   class="h-24"
-                  :src="`http://127.0.0.1:8000/uploads/` + product.photo"
+                  :src="`https://shopluanvan.x10.mx//uploads/` + product.photo"
                   :alt="product.title"
                 />
               </div>
