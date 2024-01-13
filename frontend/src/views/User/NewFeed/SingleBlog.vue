@@ -224,7 +224,7 @@ export default {
       return this.$route.params.id;
     },
     fullImagePath() {
-      const baseUrl = "https://shopluanvan.x10.mx//uploads/";
+      const baseUrl = "https://shopluanvan.x10.mx/uploads/";
       return baseUrl + this.Page.photo;
     },
   },

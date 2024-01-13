@@ -43,7 +43,7 @@
             <div class="w-20">
               <img
                 class="h-24"
-                :src="`https://shopluanvan.x10.mx//uploads/` + product.photo"
+                :src="`https://shopluanvan.x10.mx/uploads/` + product.photo"
                 :alt="product.title"
               />
             </div>
@@ -126,7 +126,7 @@ export default {
       return this.$route.params.id;
     },
     fullImagePath() {
-      const baseUrl = "https://shopluanvan.x10.mx//uploads/";
+      const baseUrl = "https://shopluanvan.x10.mx/uploads/";
       return baseUrl + this.id.photo;
     },
     totalValue() {

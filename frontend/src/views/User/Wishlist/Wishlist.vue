@@ -140,7 +140,7 @@ export default {
   },
   methods: {
     getImageUrl(photo) {
-      return `https://shopluanvan.x10.mx//uploads/${photo}`;
+      return `https://shopluanvan.x10.mx/uploads/${photo}`;
     },
     getAllInfoByAccountId() {
       if (sessionStorage.getItem("id") != null) {

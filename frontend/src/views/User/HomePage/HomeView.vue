@@ -16,8 +16,8 @@
         <!-- <Banner header="Summer 2023" desc="New Arrival Collection" /> -->
         <swiper-slide v-for="i in banners" :key="i">
           <div class="relative">
-            <img :src="getImageUrl(i.photo)" class="w-full" alt="" />
-            <div class="absolute lg:top-1/3 top-1/4" style="left: 20%">
+            <img :src="getImageUrl(i.photo)" class="w-full" style="height: 500px;" alt="" />
+            <div class="absolute top-1/2" style="left: 20%">
               <!-- <h1 class="lg:text-2xl text-xl font-semibold uppercase mb-2" v-html="i.title">
               </h1> -->
               <!-- <p class="lg:text-6xl text-4xl mb-4 font-bold"  v-html="i.description">
@@ -206,7 +206,7 @@ export default {
       });
     },
     getImageUrl(photo) {
-      return `https://shopluanvan.x10.mx//uploads/${photo}`;
+      return `https://shopluanvan.x10.mx/uploads/${photo}`;
     },
   },
   setup() {
