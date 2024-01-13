@@ -1,6 +1,6 @@
 <?php
 $configDB = array();
-$configDB["host"] 		= "localhost";
+$configDB["host"] 		= "https://shopluanvan.x10.mx/";
 $configDB["database"]	= "shopquanao";
 $configDB["username"] 	= "root";
 $configDB["password"] 	= "";
