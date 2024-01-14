@@ -245,6 +245,18 @@
             <div
               class="flex font-semibold justify-between py-6 text-sm uppercase"
             >
+              <span>Giá trị giảm</span>
+              <span>- {{ formatNumber(tongTienGiam) }}</span>
+            </div>
+            <div
+              class="flex font-semibold justify-between py-6 text-sm uppercase border-b-4 pb-3"
+            >
+              <span>Tiền ship</span>
+              <span>{{ formatNumber(tienShip) }}</span>
+            </div>
+            <div
+              class="flex font-semibold justify-between py-6 text-sm uppercase"
+            >
               <span>Giá tiền thanh toán</span>
               <span>{{ formatNumber(totalPrice) }}</span>
             </div>
@@ -305,6 +317,7 @@ export default {
       products: [],
       tienShip: 0,
       tongGiaTriXem: 0,
+      tongTienGiam: 0,
     };
   },
   components: {
@@ -359,13 +372,20 @@ export default {
     },
 
     insertOrderToO() {
+      if (
+        this.address1 == null ||
+        this.address2 == null ||
+        this.phone == null
+      ) {
+        this.tb = true;
+        this.thongbao = "Vui lòng nhập đầy đủ thông tin!";
+        return;
+      }
+
       this.tb = false;
       this.listProductInCart.forEach((e) => {
         this.products.forEach((b) => {
-          if (e.quantity > b.stock) {
-            console.log(e.quantity);
-            console.log(b.stock);
-            // Hiển thị thông báo và ngăn chặn thanh toán
+          if (e.id == b.id && e.quantity > b.stock) {
             this.tb = true;
             this.thongbao = `Số lượng sản phẩm "${b.title}" trong giỏ hàng vượt quá số lượng trong kho.`;
             return;
@@ -374,8 +394,6 @@ export default {
       });
 
       if (this.tb == true) {
-        // console.log("Có sản phẩm đã hết hàng");
-        // this.thongbao2 = "Sản phẩm đã hết hàng vui lòng mua sản phẩm khác";
         return;
       }
 
@@ -409,7 +427,6 @@ export default {
           this.address1,
           this.address2
         ).then((res) => {
-          console.log(res.data);
           this.listProductInCart.forEach((product) => {
             OrdersDetailService.insertOrderDetail(
               product.id,
@@ -458,7 +475,6 @@ export default {
     getAllInfoByAccountId() {
       if (sessionStorage.getItem("id") != null) {
         AccountService.getByID(sessionStorage.getItem("id")).then((res) => {
-          console.log(res);
           this.userInfo = res.data;
           this.first_name = res.data.name;
           this.last_name = res.data.name;
@@ -516,6 +532,9 @@ export default {
           this.parseAndSum(this.getTotalPriceWithoutShip());
       this.totalPrice = totalPrice + parseFloat(this.tienShip);
       this.tongGiaTriXem = this.parseAndSum(this.getTotalPriceWithoutShip());
+      this.tongTienGiam =
+        (this.voucher_price / 100) *
+        this.parseAndSum(this.getTotalPriceWithoutShip());
     },
   },
   watch: {
@@ -533,6 +552,9 @@ export default {
           this.parseAndSum(this.getTotalPriceWithoutShip()) +
         parseFloat(this.tienShip);
       this.tongGiaTriXem = this.parseAndSum(this.getTotalPriceWithoutShip());
+      this.tongTienGiam =
+        (this.voucher_price / 100) *
+        this.parseAndSum(this.getTotalPriceWithoutShip());
     },
     couponId: function (newCouponId) {
       // Lấy thông tin về mã giảm giá dựa trên couponId mới

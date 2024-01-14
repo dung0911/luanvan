@@ -185,7 +185,8 @@ export default {
       OrdersDetailService.getOrderByID(id).then((res) => {
         this.orderDetails = res.data;
         this.orderDetails.forEach((element) => {
-          sum += element.price;
+          console.log(element);
+          sum += element.price * element.quantity;
         });
         this.tongSP = sum;
         // console.log(res.data);
