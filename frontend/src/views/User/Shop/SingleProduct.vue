@@ -45,7 +45,7 @@
                 <div>
                   <div v-html="Page.summary"></div>
                 </div>
-                <p
+                <p v-if="Page.discount != null && Page.discount > 0"
                   class="inline-block font-bold mt-5 mb-3 text-red-500 dark:text-gray-400"
                 >
                   Giá gốc: <del>{{ formatNumber(Number(Page.price) + Page.price * Page.discount / 100) }}</del>
