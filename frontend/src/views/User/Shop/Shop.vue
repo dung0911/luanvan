@@ -109,7 +109,9 @@
                   <div
                     class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
                   >
-                    <Product
+                    <Product data-aos="fade-down"
+        data-aos-duration="1500"
+        data-aos-delay="500"
                       :blogData="page"
                       v-for="page in displayedProducts"
                       :key="page.id"

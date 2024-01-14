@@ -45,7 +45,7 @@
     <!-- End advertisement -->
 
     <!-- Feature items -->
-    <div class="text-center lg:my-24 my-12">
+    <div class="text-center lg:my-24 my-12" data-aos="fade-down" data-aos-duration="1000" data-aos-delay='300'>
       <h1 class="font-bold text-4xl mb-4">Sản phẩm</h1>
       <p class="italic text-sm mb-12">
         Làm nhiều hơn những gì làm cho bạn hạnh phúc
@@ -57,7 +57,9 @@
       </div>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-10 w-8/12 mx-auto mb-24">
+    <div class="grid lg:grid-cols-2 gap-10 w-8/12 mx-auto mb-24" data-aos="fade-down"
+        data-aos-duration="1500"
+        data-aos-delay="500">
       <div
         class="h-56 bg-cover bg-no-repeat flex justify-center items-center"
         style="
@@ -97,7 +99,9 @@
       </div>
     </div>
 
-    <div class="w-full my-12">
+    <div class="w-full my-12" data-aos="fade-down"
+        data-aos-duration="1500"
+        data-aos-delay="500">
       <h1 class="font-bold text-4xl mb-4 text-center">Tin tức</h1>
       <p class="italic text-sm mb-12 text-center">Xem tin tức mới</p>
       <div class="w-8/12 mx-auto">
@@ -112,7 +116,9 @@
     </div>
 
     <!-- About -->
-    <div class="border p-6">
+    <div class="border p-6" data-aos="fade-down"
+        data-aos-duration="1500"
+        data-aos-delay="500">
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:w-10/12 mx-auto">
         <div class="flex justify-center">
           <i class="fa fa-car text-3xl" aria-hidden="true"></i>
@@ -142,7 +148,9 @@
     </div>
     <!-- end About -->
     <!-- Footer -->
-    <Footer />
+    <Footer  data-aos="fade-down"
+        data-aos-duration="1500"
+        data-aos-delay="500"/>
     <!-- End Footer -->
   </div>
 </template>

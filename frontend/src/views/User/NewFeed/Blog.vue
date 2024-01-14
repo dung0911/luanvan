@@ -105,7 +105,9 @@
                   </p>
                 </div> -->
                 <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                  <BlogVue
+                  <BlogVue data-aos="fade-down"
+        data-aos-duration="1500"
+        data-aos-delay="500"
                     :blogData="page"
                     v-for="page in displayedProducts"
                     :key="page.blogId"

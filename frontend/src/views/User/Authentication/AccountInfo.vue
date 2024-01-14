@@ -40,7 +40,7 @@
                 Thông tin người dùng
               </h6>
               <div class="w-full">
-                <div class="relative w-full mb-3">
+                <div class="relative w-full mb-12">
                   <label
                     class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                     for="avatar"
@@ -58,7 +58,7 @@
                     v-else
                     :src="`https://shopluanvan.x10.mx/uploads/` + userInfo.photo"
                     alt="Avatar"
-                    class="flex justify-center rounded-full mx-auto w-64 h-64 p-1 border-2"
+                    class="flex justify-center rounded-full mx-auto w-64 h-64 p-1 border-2 mb-16"
                   />
                 </div>
               </div>

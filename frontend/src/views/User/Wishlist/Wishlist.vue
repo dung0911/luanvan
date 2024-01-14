@@ -20,11 +20,13 @@
         </div>
 
         <div
-          class="w-3/4 mx-auto grid grid-cols-3 gap-5 mt-10"
+          class="w-2/3 mx-auto grid grid-cols-4 gap-5 mt-10"
           v-if="userInfo != null && userInfo != ''"
         >
-          <div class="relative" v-for="(i, index) in Wishlists" :key="i.id">
-            <img class="hidden w-full h-64 lg:block" :src="getImageUrl(i.photo)" />
+          <div class="relative" v-for="(i, index) in Wishlists" :key="i.id" data-aos="fade-down"
+        data-aos-duration="1500"
+        data-aos-delay="500">
+            <img class="hidden w-full h-72 lg:block" :src="getImageUrl(i.photo)" />
             <button
               @click="() => removeFromWishlist(index, i.product_id)"
               aria-label="close"

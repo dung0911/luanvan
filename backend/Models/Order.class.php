@@ -13,13 +13,13 @@ class Order extends Db
     }
 
     function getOrderByUser( $user_id ) {
-        $sql = 'select * from orders where user_id = ?';
+        $sql = 'select * from orders where user_id = ? order by status';
         $data = $this->select( $sql, array( $user_id ) );
         return $data;
     }
 
     function getOrderById( $id ) {
-        $sql = 'select * from orders where id = ?';
+        $sql = 'select * from orders where id = ? order by status';
         $data = $this->select( $sql, array( $id ) );
         return $data;
     }
