@@ -40,7 +40,12 @@
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
               >
-                Trạng thái đơn hàng
+                Thanh toán đơn hàng
+              </th>
+              <th
+                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+              >
+                Trạng thái đơn đặt hàng
               </th>
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
@@ -78,12 +83,20 @@
                 {{ order.created_at }}
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                {{ order.payment_status == "unpaid" ? "Chưa thanh toán" :"Đã thanh toán" }}
+                {{
+                  order.payment_status == "unpaid"
+                    ? "Chưa thanh toán"
+                    : "Đã thanh toán"
+                }}
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                <button
-                  @click="() => showOrderDetail(order.id)"
-                >
+                {{ order.status == 'new' ? "đơn hàng mới" : ""}}
+                {{ order.status == 'process' ? "Đang giao" : ""}}
+                {{ order.status == 'delivered' ? "Đã giao" : ""}}
+                {{ order.status == 'cancel' ? "Đơn hàng đã hủy" : ""}}
+              </td>
+              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                <button @click="() => showOrderDetail(order.id)">
                   <i class="fa fa-eye" aria-hidden="true"></i>
                 </button>
               </td>

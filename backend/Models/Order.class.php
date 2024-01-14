@@ -42,5 +42,10 @@ class Order extends Db
         }
     }
 
+    function updateOrder( $status, $id ) {
+        $sql = 'UPDATE `orders` SET `status`=?  WHERE id = ?';
+        return $this->update( $sql, array( $status, $id ) );
+    }
+
 }
 ?>

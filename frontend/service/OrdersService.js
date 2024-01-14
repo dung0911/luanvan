@@ -63,6 +63,15 @@ class OrdersService {
       },
     });
   }
+  updateOrder(status, id) {
+    return axios.get(`${PRODUCT_API_URL}`, {
+      params: {
+        action: "updateOrder",
+        status: status,
+        id: id,
+      },
+    });
+  }
 
   getShipFromOrderId(id) {
     return axios.get(`${PRODUCT_API_URL}`, {

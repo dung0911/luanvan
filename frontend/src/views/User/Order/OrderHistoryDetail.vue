@@ -13,6 +13,15 @@
             Tổng giá trị:
             {{ formatNumber(totalValue) }}
           </h1>
+          <div v-for="o in orderName" :key="o.id">
+            <button
+              @click="() => huyThanhToan()"
+              v-if="o.payment_status == 'unpaid' && (o.status != 'cancel' || o.status == 'delivered')"
+              class="px-4 py-2 border rounded-sm hover:bg-gray-100"
+            >
+              Hủy đơn hàng
+            </button>
+          </div>
         </div>
         <div class="flex mt-10 mb-5">
           <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">
@@ -119,6 +128,11 @@ export default {
 
       // Thay thế ký hiệu mặc định (₫) bằng "VNĐ"
       return formattedValue.replace("₫", "VNĐ");
+    },
+    huyThanhToan() {
+      OrdersService.updateOrder('cancel', this.id).then((res) => {
+        console.log("update thanh cong"+res.data);
+      });
     },
   },
   computed: {
