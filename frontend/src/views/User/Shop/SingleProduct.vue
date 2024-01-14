@@ -46,7 +46,12 @@
                   <div v-html="Page.summary"></div>
                 </div>
                 <p
-                  class="inline-block mb-8 text-4xl font-bold text-gray-700 dark:text-gray-400"
+                  class="inline-block font-bold mt-5 mb-3 text-red-500 dark:text-gray-400"
+                >
+                  Giá gốc: <del>{{ formatNumber(Number(Page.price) + Page.price * Page.discount / 100) }}</del>
+                </p><br>
+                <p
+                  class="inline-block mb-5 text-4xl font-bold text-gray-700 dark:text-gray-400"
                 >
                   <span>{{ formatNumber(Page.price) }}</span>
                 </p>
@@ -85,14 +90,15 @@
               </div>
               <div class="flex flex-wrap items-center -mx-4">
                 <div class="w-full px-4 mb-4 lg:w-1/2 lg:mb-0">
-                  <button
-                    @click="addToCart"
+                  <button v-if="Page.stock > 0"
+                    @click="addToCart" 
                     class="flex items-center justify-center w-full p-4 text-blue-500 border border-blue-500 rounded-md dark:text-gray-200 dark:border-blue-600 hover:bg-blue-600 hover:border-blue-600 hover:text-gray-100 dark:bg-blue-600 dark:hover:bg-blue-700 dark:hover:border-blue-700 dark:hover:text-gray-300"
                   >
                     Thêm vào giỏ hàng
                   </button>
                 </div>
               </div>
+              <h4 class="text-red-500 text-2xl mt-5" v-if="Page.stock == 0">Tạm thời hết hàng</h4>
             </div>
           </div>
         </div>

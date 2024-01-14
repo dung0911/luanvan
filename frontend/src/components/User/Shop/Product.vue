@@ -15,7 +15,7 @@
         class="h-full w-full object-cover object-center lg:h-full lg:w-full"
       />
       <div class="hidden group-hover:block absolute bottom-3 left-3">
-        <button
+        <button v-if="blogData.stock > 0"
           @click="addToCart"
           class="mx-1 bg-red-300 hover:bg-black hover:text-white px-3 py-2 my-1 rounded-full"
         >
@@ -39,14 +39,25 @@
       </div>
     </div>
     <div class="flex justify-between p-4">
-      <h3 class="text-sm text-gray-700">
-        <router-link :to="`/singleProduct/${blogData.id}-${blogData.slug}`">
-          {{ blogData.title }}
-        </router-link>
-      </h3>
-      <p class="text-sm font-medium text-gray-900">
-        {{ formatNumber(blogData.price) }}
-      </p>
+      <div class="">
+        <p><pre>    </pre></p>
+        <h3 class="text-sm text-gray-700">
+          <router-link :to="`/singleProduct/${blogData.id}-${blogData.slug}`">
+            {{ blogData.title }}
+          </router-link>
+        </h3>
+      </div>
+      <div class="">
+        
+        <del v-if="blogData.discount != null && blogData.discount > 0">{{
+          formatNumber(Number(blogData.price) + (blogData.price *blogData.discount /100 ))
+          
+        }}</del>
+
+        <p class="text-sm font-medium text-gray-900">
+          {{ formatNumber(blogData.price) }}
+        </p>
+      </div>
     </div>
   </div>
 

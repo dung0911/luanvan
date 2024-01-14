@@ -4,6 +4,15 @@
     <Banner />
     <div class="flex shadow-md my-10">
       <div class="w-3/4 bg-white px-10 py-10 mx-auto">
+        <div class="flex justify-between mb-5">
+          <div class=""></div>
+          <h4 class="text-lg text-red-500" v-for="order in orderName" :key="order.id">
+            {{ order.status == "new" ? "đơn hàng mới" : "" }}
+            {{ order.status == "process" ? "đơn hàng đang được giao" : "" }}
+            {{ order.status == "delivered" ? "Đơn hàng đã giao thành công" : "" }}
+            {{ order.status == "cancel" ? "Đơn hàng đã bị hủy" : "" }}
+          </h4>
+        </div>
         <div class="flex justify-between border-b pb-8">
           <h1 class="font-semibold text-2xl">
             Đơn hàng:
@@ -16,7 +25,10 @@
           <div v-for="o in orderName" :key="o.id">
             <button
               @click="() => huyThanhToan()"
-              v-if="o.payment_status == 'unpaid' && (o.status != 'cancel' || o.status == 'delivered')"
+              v-if="
+                o.payment_status == 'unpaid' &&
+                (o.status != 'cancel' || o.status == 'delivered')
+              "
               class="px-4 py-2 border rounded-sm hover:bg-gray-100"
             >
               Hủy đơn hàng
@@ -130,8 +142,8 @@ export default {
       return formattedValue.replace("₫", "VNĐ");
     },
     huyThanhToan() {
-      OrdersService.updateOrder('cancel', this.id).then((res) => {
-        console.log("update thanh cong"+res.data);
+      OrdersService.updateOrder("cancel", this.id).then((res) => {
+        console.log("update thanh cong" + res.data);
       });
     },
   },
