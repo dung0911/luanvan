@@ -99,6 +99,27 @@
       </div>
     </div>
 
+
+
+
+
+    <div class="text-center lg:my-24 my-12" data-aos="fade-down" data-aos-duration="1000" data-aos-delay='300'>
+      <h1 class="font-bold text-4xl mb-4">Sản phẩm mới</h1>
+      <p class="italic text-sm mb-12">
+        Nếu bạn không làm những gì bạn yêu thích, bạn đang lãng phí thời gian của mình.
+      </p>
+      <div class="mx-auto w-8/12">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <Product v-for="page in featureProducts.slice(0, 4)" :key="page.id" :blogData="page" />
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
     <div class="w-full my-12" data-aos="fade-down"
         data-aos-duration="1500"
         data-aos-delay="500">

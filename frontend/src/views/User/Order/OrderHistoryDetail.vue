@@ -8,7 +8,7 @@
           <div class=""></div>
           <h4 class="text-lg text-red-500" v-for="order in orderName" :key="order.id">
             {{ order.status == "new" ? "đơn hàng mới" : "" }}
-            {{ order.status == "process" ? "đơn hàng đang được giao" : "" }}
+            {{ order.status == "process" ? "đơn hàng xử lý" : "" }}
             {{ order.status == "delivered" ? "Đơn hàng đã giao thành công" : "" }}
             {{ order.status == "cancel" ? "Đơn hàng đã bị hủy" : "" }}
           </h4>

@@ -91,7 +91,7 @@
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 {{ order.status == 'new' ? "đơn hàng mới" : ""}}
-                {{ order.status == 'process' ? "Đang giao" : ""}}
+                {{ order.status == 'process' ? "Đang xử lý" : ""}}
                 {{ order.status == 'delivered' ? "Đã giao" : ""}}
                 {{ order.status == 'cancel' ? "Đơn hàng đã hủy" : ""}}
               </td>
