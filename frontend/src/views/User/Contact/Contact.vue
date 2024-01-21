@@ -33,7 +33,7 @@
             <input
               type="email"
               id="email"
-              value="trungdung123123123@gmail.com"
+              value="CONTACT@GMAIL.COM"
               name="email"
               disabled
               class="w-full bg-white rounded  text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
@@ -46,7 +46,7 @@
             <input
               type="email"
               id="email"
-              value="123/123A Lê Hồng Phong, Phước Hải"
+              value="30 Đ. TÂN THẮNG, SƠN KỲ, TÂN PHÚ, THÀNH PHỐ HỒ CHÍ MINH"
               name="email"
               disabled
               class="w-full bg-white rounded  text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"

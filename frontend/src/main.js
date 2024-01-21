@@ -7,4 +7,4 @@ import store from "./store/index"
 import 'aos/dist/aos.css'
 import AOS from 'aos'
 
-createApp(App).use(router).use(store).mount('#app').use(AOS)
+createApp(App).use(router).use(store).use(AOS).mount('#app')

@@ -3,7 +3,11 @@
     <div class="lg:flex justify-between w-8/12 mx-auto leading-loose">
       <div class="mb-12">
         <router-link to="/">
-          <img src="../../../assets/White Minimalist Online Fashion Shop Bag Logo.jpg" class="h-32" alt="" />
+          <img
+            src="../../../assets/White Minimalist Online Fashion Shop Bag Logo.jpg"
+            class="h-32"
+            alt=""
+          />
         </router-link>
         <p>30 Đ. Tân Thắng, Sơn Kỳ, Tân Phú, Thành phố Hồ Chí Minh</p>
         <p>028 6288 7733</p>
@@ -28,10 +32,9 @@
       </div>
       <div class="mb-12">
         <h3 class="text-xl font-semibold mb-4">Chính sách khách hàng</h3>
-        <p>Thông tin giao hàng</p>
-        <p>Điều khoản & Điều kiện</p>
-        <p>Dịch vụ khách hàng</p>
-        <p>Điều khoản</p>
+        <router-link to="/vechungtoi">Về chúng tôi</router-link><br />
+        <router-link to="/thongtingiaohang">Thông tin giao hàng</router-link><br />
+        <router-link to="/dieukhoansudung">Điều khoản & Điều kiện</router-link><br />
       </div>
       <div class="lg:w-1/3">
         <h3 class="text-xl font-semibold mb-4">THÔNG TIN CỬA HÀNG</h3>
