@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const PRODUCT_API_URL =
-  "http://localhost/LVTN/backend/Controller/ProductsController.php";
+  "http://localhost/LuanVanTotNghiep/LVTN/backend/Controller/ProductsController.php";
 
 class ProductsService {
   getAll() {

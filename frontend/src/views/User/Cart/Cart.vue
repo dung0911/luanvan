@@ -192,12 +192,14 @@
               <div class="w-20">
                 <img
                   class="h-24"
-                  :src="`https://shopluanvan.x10.mx/uploads/` + product.photo"
+                  :src="`http://127.0.0.1:8000/uploads/` + product.photo"
                   :alt="product.title"
                 />
               </div>
               <div class="flex flex-col justify-between ml-4 flex-grow">
                 <span class="font-bold text-sm">{{ product.title }}</span>
+                size: {{ product.size }}
+
                 <div
                   @click="() => removeItemInList(index)"
                   class="font-semibold hover:text-red-500 text-gray-500 text-xs cursor-pointer"

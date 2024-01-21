@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const UploadFile_API_URL = "http://localhost/LVTN/backend/Controller/UploadFileController.php";
+const UploadFile_API_URL = "http://localhost/LuanVanTotNghiep/LVTN/backend/Controller/UploadFileController.php";
 
 class UploadFileService {
   handleUpload(file) {

@@ -196,6 +196,7 @@ export default {
     },
     getProductByCatId(id) {
       ProductsService.getByIDCat(id).then((res) => {
+        console.log(id);
         console.log(res.data);
         this.products = [...res.data];
         this.currentPage = 1;

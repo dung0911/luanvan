@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const PRODUCT_API_URL =
-  "http://localhost/LVTN/backend/Controller/PostCommentController.php";
+  "http://localhost/LuanVanTotNghiep/LVTN/backend/Controller/PostCommentController.php";
 
 class PostCommentsService {
   getByID(post_id) {

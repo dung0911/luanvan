@@ -30,22 +30,22 @@
           <div
             v-for="product in orderDetails"
             :key="product.id"
-            class="flex w-full hover:bg-gray-100 -mx-8 px-6 py-5"
+            class="flex w-full hover:bg-gray-100  px-6 py-5"
           >
             <div class="flex justify-between">
               <div class="w-20">
                 <img
                   class="h-24"
-                  :src="`https://shopluanvan.x10.mx/uploads/` + product.photo"
+                  :src="`http://127.0.0.1:8000/uploads/` + product.photo"
                   :alt="product.title"
                 />
-                size: {{ product.cart_size  }}
+                size: {{ product.size }}
               </div>
               <div class="flex flex-col justify-between ml-4 flex-grow">
                 <span class="font-bold text-sm">{{ product.title }}</span>
               </div>
             </div>
-            <div class="flex justify-center w-1/5">
+            <div class="flex justify-center w-1/4">
               <p class="mx-2 text-center w-8">{{ product.quantity }}</p>
             </div>
             <span class="text-center w-1/5 font-semibold text-sm">{{
@@ -208,7 +208,7 @@ export default {
       return this.$route.params.id;
     },
     fullImagePath() {
-      const baseUrl = "https://shopluanvan.x10.mx/uploads/";
+      const baseUrl = "http://127.0.0.1:8000/uploads/";
       return baseUrl + this.id.photo;
     },
     totalValue() {
@@ -227,7 +227,7 @@ export default {
     await this.getShipFromOrder(this.id);
   },
 
-    async mounted() {
+  async mounted() {
     await this.getAllInfoByAccountId();
     await this.getPage(this.id);
     await this.getOrder(this.id);

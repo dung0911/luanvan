@@ -15,7 +15,7 @@ class Product extends Db
     }
 
     function getByIDCat( $cat_id ) {
-        $sql = 'select pro.photo, pro.title, pro.price, pro.size, pro.title, pro.id from products pro inner join categories cat on cat.id = pro.cat_id where pro.cat_id = ?';
+        $sql = 'select pro.photo, pro.title, pro.price, pro.size, pro.title, pro.id from products pro inner join categories cat on cat.id = pro.cat_id where pro.child_cat_id = ?';
         $data = $this->select( $sql, array( $cat_id ) );
         return $data;
     }

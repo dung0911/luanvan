@@ -9,7 +9,7 @@ class OrderDetail extends Db
     }
 
     function getOrderByID( $order_id ) {
-        $sql = 'SELECT * FROM `carts` ca INNER JOIN products pro on ca.product_id = pro.id WHERE order_id = ?';
+        $sql = 'SELECT ca.size, ca.price, ca.quantity, ca.amount, ca.order_id, ca.product_id, pro.title, pro.price FROM `carts` ca INNER JOIN products pro on ca.product_id = pro.id WHERE order_id = ?';
         $data = $this->select( $sql, array( $order_id ) );
         return $data;
     }

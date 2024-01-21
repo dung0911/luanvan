@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const PRODUCT_API_URL =
-  "http://localhost/LVTN/backend/Controller/OrderDetailController.php";
+  "http://localhost/LuanVanTotNghiep/LVTN/backend/Controller/OrderDetailController.php";
 
 class OrdersDetailService {
   insertOrderDetail(
@@ -11,7 +11,7 @@ class OrdersDetailService {
     price,
     quantity,
     amount,
-    cart_size
+    size
   ) {
     return axios.get(`${PRODUCT_API_URL}`, {
       params: {
@@ -22,7 +22,7 @@ class OrdersDetailService {
         price: price,
         quantity: quantity,
         amount: amount,
-        cart_size: cart_size,
+        size: size,
       },
     });
   }

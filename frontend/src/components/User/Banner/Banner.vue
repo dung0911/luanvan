@@ -42,7 +42,7 @@ export default {
   },
   computed: {
     fullImagePath() {
-      const baseUrl = "https://shopluanvan.x10.mx/uploads/";
+      const baseUrl = "http://127.0.0.1:8000/uploads/";
       return baseUrl + this.banners.photo;
     },
   },

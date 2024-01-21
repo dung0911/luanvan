@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const Account_API_URL =
-  "http://localhost/LVTN/backend/Controller/AccountController.php";
+  "http://localhost/LuanVanTotNghiep/LVTN/backend/Controller/AccountController.php";
 
 class AccountsService {
   getByID(id) {

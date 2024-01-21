@@ -6,10 +6,16 @@
       <div class="w-3/4 bg-white px-10 py-10 mx-auto">
         <div class="flex justify-between mb-5">
           <div class=""></div>
-          <h4 class="text-lg text-red-500" v-for="order in orderName" :key="order.id">
+          <h4
+            class="text-lg text-red-500"
+            v-for="order in orderName"
+            :key="order.id"
+          >
             {{ order.status == "new" ? "đơn hàng mới" : "" }}
             {{ order.status == "process" ? "đơn hàng xử lý" : "" }}
-            {{ order.status == "delivered" ? "Đơn hàng đã giao thành công" : "" }}
+            {{
+              order.status == "delivered" ? "Đơn hàng đã giao thành công" : ""
+            }}
             {{ order.status == "cancel" ? "Đơn hàng đã bị hủy" : "" }}
           </h4>
         </div>
@@ -64,10 +70,10 @@
             <div class="w-20">
               <img
                 class="h-24"
-                :src="`https://shopluanvan.x10.mx/uploads/` + product.photo"
+                :src="`http://127.0.0.1:8000/uploads/` + product.photo"
                 :alt="product.title"
               />
-              size: {{ product.cart_size }}
+              size: {{ product.size }}
             </div>
             <div class="flex flex-col justify-between ml-4 flex-grow">
               <span class="font-bold text-sm">{{ product.title }}</span>
@@ -145,6 +151,7 @@ export default {
     huyThanhToan() {
       OrdersService.updateOrder("cancel", this.id).then((res) => {
         console.log("update thanh cong" + res.data);
+        this.$router.push(`/OrderHistory`);
       });
     },
   },
@@ -153,7 +160,7 @@ export default {
       return this.$route.params.id;
     },
     fullImagePath() {
-      const baseUrl = "https://shopluanvan.x10.mx/uploads/";
+      const baseUrl = "http://127.0.0.1:8000/uploads/";
       return baseUrl + this.id.photo;
     },
     totalValue() {
