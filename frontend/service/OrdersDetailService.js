@@ -11,7 +11,7 @@ class OrdersDetailService {
     price,
     quantity,
     amount,
-    size
+    cart_size
   ) {
     return axios.get(`${PRODUCT_API_URL}`, {
       params: {
@@ -22,7 +22,7 @@ class OrdersDetailService {
         price: price,
         quantity: quantity,
         amount: amount,
-        size: size,
+        cart_size: cart_size,
       },
     });
   }

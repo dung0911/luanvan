@@ -67,6 +67,7 @@
                 :src="`https://shopluanvan.x10.mx/uploads/` + product.photo"
                 :alt="product.title"
               />
+              size: {{ product.cart_size }}
             </div>
             <div class="flex flex-col justify-between ml-4 flex-grow">
               <span class="font-bold text-sm">{{ product.title }}</span>
