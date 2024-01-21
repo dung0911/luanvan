@@ -30,9 +30,9 @@ try {
 
 class OrderDetail extends Db
  {
-    function insertOrderDetail( $product_id, $order_id, $user_id, $price, $quantity, $amount, $size ) {
-        $sql = 'INSERT INTO `carts`( `product_id`, `order_id`, `user_id`, `price`, `quantity`, `amount`, `size`) VALUES ( ?, ?, ?, ?, ?, ?,?)';
-        return $this->insert( $sql, array( $product_id, $order_id, $user_id, $price, $quantity, $amount, $size ) );
+    function insertOrderDetail( $product_id, $order_id, $user_id, $price, $quantity, $amount, $cart_size ) {
+        $sql = 'INSERT INTO `carts`( `product_id`, `order_id`, `user_id`, `price`, `quantity`, `amount`, `cart_size`) VALUES ( ?, ?, ?, ?, ?, ?,?)';
+        return $this->insert( $sql, array( $product_id, $order_id, $user_id, $price, $quantity, $amount, $cart_size ) );
     }
 
     function getOrderByID( $order_id ) {
@@ -53,9 +53,9 @@ switch ( $action ) {
     $price = $_GET[ 'price' ];
     $quantity = $_GET[ 'quantity' ];
     $amount = $_GET[ 'amount' ];
-    $size = $_GET[ 'size' ];
+    $cart_size = $_GET[ 'size' ];
 
-    $message = ( $products->insertOrderDetail( $product_id, $order_id, $user_id, $price, $quantity, $amount, $size ) > 0 )?true:false;
+    $message = ( $products->insertOrderDetail( $product_id, $order_id, $user_id, $price, $quantity, $amount, $cart_size ) > 0 )?true:false;
     break;
     case 'getOrderByID':
     $order_id = $_GET[ 'order_id' ];
