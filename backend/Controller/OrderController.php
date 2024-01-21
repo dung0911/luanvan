@@ -47,7 +47,7 @@ class Order extends Db
     }
 
     function getOrderById( $id ) {
-        $sql = 'select * from orders where id = ? order by status';
+        $sql = 'select * from orders where id = ? order by status, created_at desc';
         $data = $this->select( $sql, array( $id ) );
         return $data;
     }
