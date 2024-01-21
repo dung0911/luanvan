@@ -226,6 +226,13 @@ export default {
     await this.getOrder(this.id);
     await this.getShipFromOrder(this.id);
   },
+
+    async mounted() {
+    await this.getAllInfoByAccountId();
+    await this.getPage(this.id);
+    await this.getOrder(this.id);
+    await this.getShipFromOrder(this.id);
+  },
 };
 </script>
       
